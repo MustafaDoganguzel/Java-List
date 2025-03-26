@@ -11,20 +11,29 @@ public class Grocery {
     public void startGrocery(){
         Scanner scanner = new Scanner(System.in);
 
-            System.out.println("Neler yapmak istersiniz? " +
-                    "0 -> Listeyi kapatmak icin" +
-                    "1 -> Listeye ekleme yapmak icin" +
-                    "2 -> Listeden cikartma yapmak icin");
+        while (true) {
+            System.out.println("0: Uygulamayı Durdur");
+            System.out.println("1: Eleman Ekle");
+            System.out.println("2: Eleman Çıkar");
+            System.out.print("Bir seçenek giriniz ");
             int prompt = scanner.nextInt();
+            scanner.nextLine();
 
             if (prompt == 0) {
-                return;
+                System.out.println("Uygulama durduruluyor...");
+                break;
             } else if (prompt == 1) {
-                System.out.println("Eklenmesini istediğiniz elemanları giriniz");
-                scanner.nextLine();
+                System.out.print("Eklemek istediğiniz eleman veya elemanları girin: ");
+                String input = scanner.nextLine();
+                addItems(input);
             } else if (prompt == 2) {
-                System.out.println("Cıkarılmasını istediğiniz elemanları giriniz.");
+                System.out.print("Çıkarmak istediğiniz eleman veya elemanları girin: ");
+                String input = scanner.nextLine();
+                removeItems(input);
+            } else {
+                System.out.println("Lutfen gecerli bir islem giriniz!");
             }
+        }
     }
 
     public static void addItems(String input){
