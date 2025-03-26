@@ -1,7 +1,10 @@
 package org.example;
 
+import org.example.models.Grocery;
+
 public class Main {
     public static void main(String[] args) {
-        System.out.println("1234");
+        Grocery grocery = new Grocery();
+        grocery.startGrocery();
     }
 }
